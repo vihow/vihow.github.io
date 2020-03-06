@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "最长公共子序列"
+title:  "最长公共子序列 & 最长上升子序列"
 date:   2020-03-05 13:52:07 +0800
 ---
 
@@ -58,4 +58,48 @@ int main()
 }
 ```
 
- 
+> 返回字符串的最长上升子序列<br>
+  8 5 1 3 4 => 3(1,3,4) 
+
+### 📕状态
+MaxUp(i): 以s[i]为终点的上升子序列的长度。
+
+### 🎨边界
+MaxUp(0) = 1;
+
+### 🎃状态转移方程：
+MaxUp(k) = **max{** MaxUp(i): 0 <= i < k && a[i] < a[k]  + 1 **}**<br>
+若找不到这样的i，则MaxUp(k) = 1;
+
+### 💻代码实现
+```c++
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <cstring>
+
+using namespace std; 
+int main()
+{
+    int n;
+    cin >> n;
+    int s[n];
+    int maxUp[n];
+    for(int i = 0; i < n; ++i)
+    {
+        cin >> s[i]; 
+        maxUp[i] = 1;
+    }
+    for(int i = 1; i < n; ++i)
+    {
+        for(int j = 0; j < i; ++j)
+        {
+            if(s[i] > s[j])
+                maxUp[i] = max(maxUp[i], maxUp[j]+1);
+        }
+    }
+    cout << max_element(maxUp, maxUp+n);
+    return 0;
+}
+
+```
