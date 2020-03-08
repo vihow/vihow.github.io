@@ -101,5 +101,4 @@ int main()
     cout << max_element(maxUp, maxUp+n);
     return 0;
 }
-
 ```
