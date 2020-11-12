@@ -1,8 +1,5 @@
----
-title: "Git_branch"
-date: 2020-11-12T15:28:07+08:00
-draft: false
----
+# Git_branch
+
 
 # Git-1 远程仓库
 
@@ -19,4 +16,5 @@ git remote
 ``
 git remote add <shortname> <url> 
 ``
+
 
