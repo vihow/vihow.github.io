@@ -5,29 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Linux_11 15 - My New Hugo Site</title><meta name="Description" content=""><meta property="og:title" content="Linux_11 15" />
-<meta property="og:description" content="每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  " />
+        <title>Shell_basic1 - My New Hugo Site</title><meta name="Description" content=""><meta property="og:title" content="Shell_basic1" />
+<meta property="og:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &laquo; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &laquo; &lsquo;STR&rsquo; &laquo;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道    filename: stdout输出到文件（覆盖）" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/linux_11-15/" />
-<meta property="article:published_time" content="2020-11-15T22:27:48+08:00" />
-<meta property="article:modified_time" content="2020-11-15T22:27:48+08:00" />
+<meta property="og:url" content="http://example.org/shell_basic1/" />
+<meta property="article:published_time" content="2020-11-16T22:24:13+08:00" />
+<meta property="article:modified_time" content="2020-11-16T22:24:13+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Linux_11 15"/>
-<meta name="twitter:description" content="每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  "/>
+<meta name="twitter:title" content="Shell_basic1"/>
+<meta name="twitter:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &laquo; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &laquo; &lsquo;STR&rsquo; &laquo;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道    filename: stdout输出到文件（覆盖）"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/linux_11-15/" /><link rel="prev" href="http://example.org/git_branch/" /><link rel="next" href="http://example.org/shell_basic1/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/shell_basic1/" /><link rel="prev" href="http://example.org/linux_11-15/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Linux_11 15",
+        "headline": "Shell_basic1",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/example.org\/linux_11-15\/"
-        },"genre": "posts","wordcount":  34 ,
-        "url": "http:\/\/example.org\/linux_11-15\/","datePublished": "2020-11-15T22:27:48+08:00","dateModified": "2020-11-15T22:27:48+08:00","publisher": {
+            "@id": "http:\/\/example.org\/shell_basic1\/"
+        },"genre": "posts","wordcount":  76 ,
+        "url": "http:\/\/example.org\/shell_basic1\/","datePublished": "2020-11-16T22:24:13+08:00","dateModified": "2020-11-16T22:24:13+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -101,9 +101,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Linux_11 15</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Shell_basic1</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-15">2020-11-15</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;34 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-16">2020-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;76 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -112,42 +112,100 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-watch">1. watch</a></li>
-    <li><a href="#2-nohup">2. nohup</a></li>
-    <li><a href="#3-terminal-shell--console">3. terminal, shell , console</a></li>
+    <li><a href="#历史与别名">历史与别名</a>
+      <ul>
+        <li><a href="#历史表">历史表</a></li>
+        <li><a href="#别名和别名替换">别名和别名替换</a></li>
+        <li><a href="#输入重定向-stdin-0号文件描述符">输入重定向 stdin 0号文件描述符</a></li>
+        <li><a href="#输出重定向与管道">输出重定向与管道</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="每日linux命令">每日Linux命令</h1>
-<h2 id="1-watch">1. watch</h2>
+            </div><div class="content" id="content"><h1 id="自动执行的一批命令用户级别">自动执行的一批命令（用户级别）</h1>
 <ul>
-<li>周期性的执行一个命令并展示其输出</li>
-<li>-n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行</li>
+<li>当bash最为注册shell被启动时：自动执行~/.bash_profile</li>
+<li>当bash作为注册shell退出时：自动执行~/.bash_logout</li>
+<li>当bash作为交互式shell启动时：自动执行~/.bashrc</li>
 </ul>
-<h2 id="2-nohup">2. nohup</h2>
+<h1 id="脚本文件">脚本文件</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">bash -x &lt;.sh&gt;: 打印每一行命令
+
+./xx.sh:  在子进程中执行
+. xx.sh  =  source xx.sh：  在当前shell进程中执行
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="历史与别名">历史与别名</h2>
+<h3 id="历史表">历史表</h3>
 <ul>
-<li>运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。</li>
-<li>nohup &lt;commond&gt;</li>
+<li>先前键入的命令存于历史表 编号递增，FIFO刷新</li>
+<li>表大小由变量HISTSIZE设定，该配置位于~/.bashrc</li>
+<li>history：查看历史命令</li>
+<li>!! : 引用上一命令</li>
+<li>!str ： 以str开头的最近使用的命令</li>
 </ul>
-<h2 id="3-terminal-shell--console">3. terminal, shell , console</h2>
+<h3 id="别名和别名替换">别名和别名替换</h3>
 <ul>
-<li>terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment.</li>
-<li>console(控制台)：physical terminal(bind with 键盘)</li>
-<li>shell: 命令行的interpreter</li>
+<li>alias</li>
+<li>alias rm = &lsquo;rm -i&rsquo;</li>
+</ul>
+<h3 id="输入重定向-stdin-0号文件描述符">输入重定向 stdin 0号文件描述符</h3>
+<ul>
+<li>&lt; file: 从file中获取输入</li>
+<li>&laquo; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &laquo; &lsquo;STR&rsquo;</li>
+<li>&laquo;&lt; ABCD: 获得的输入即为&rsquo;ABCD'</li>
+<li>base64：将输入变为base64编码</li>
+</ul>
+<h3 id="输出重定向与管道">输出重定向与管道</h3>
+<ul>
+<li>
+<blockquote>
+<p>filename: stdout输出到文件（覆盖）</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>filename: stdout输出到文件（追加）</p>
+</blockquote>
+</blockquote>
+</li>
+<li>2&gt; filename: stderr输出到文件</li>
+<li>2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gcc test.c &gt; test.err &gt; 2&gt;&amp;1
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>管道：仅把stdout进行管道， 如果需要stderr 2&gt;&amp;1</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-11-15</span>
+                <span>Updated on 2020-11-16</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/linux_11-15/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/shell_basic1/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/linux_11-15/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/linux_11-15/" data-title="Linux_11 15"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/shell_basic1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -159,8 +217,7 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/git_branch/" class="prev" rel="prev" title="Git_branch"><i class="fas fa-angle-left fa-fw"></i>Git_branch</a>
-            <a href="/shell_basic1/" class="next" rel="next" title="Shell_basic1">Shell_basic1<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/linux_11-15/" class="prev" rel="prev" title="Linux_11 15"><i class="fas fa-angle-left fa-fw"></i>Linux_11 15</a></div>
 </div>
 <div id="comments"></div></article></div>
             </main><footer class="footer">
