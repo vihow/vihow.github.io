@@ -28,22 +28,22 @@ bash -x <.sh>: 打印每一行命令
 
 
 ### 输入重定向 stdin 0号文件描述符
-- < file: 从file中获取输入
-- << STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如\`date\`，若禁止替换，使用 << 'STR'
-- <<< ABCD: 获得的输入即为'ABCD'
+- \< file: 从file中获取输入
+- \<\< STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如\`date\`，若禁止替换，使用 \<\< 'STR'
+- \<\<\< ABCD: 获得的输入即为'ABCD'
 - base64：将输入变为base64编码
 
 
 ### 输出重定向与管道
-- > filename: stdout输出到文件（覆盖）
-- >> filename: stdout输出到文件（追加）
+- \> filename: stdout输出到文件（覆盖）
+- \>\> filename: stdout输出到文件（追加）
 - 2> filename: stderr输出到文件
 - 2>&1 filename: 将文件句柄2重定向到文件描述符1指向的文件
 ```
 gcc test.c > test.err > 2>&1
 ```
 
-- 管道：仅把stdout进行管道， 如果需要stderr 2>&1
+- 管道：仅把stdout进行管道， 如果需将stderr管道 2>&1
 
 
 
