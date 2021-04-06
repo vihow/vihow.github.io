@@ -50,7 +50,7 @@ publishDir = "docs"
   keywords = ["Theme", "Hugo"]
   # site default theme ("light", "dark", "auto")
   defaultTheme = "auto"
-  # public git repo url only then enableGitInfo is true
+  # public git repo url only when enableGitInfo is true
   gitRepo = ""
   #  which hash function used for SRI, when empty, no SRI is used
   # ("sha256", "sha384", "sha512", "md5")
@@ -58,7 +58,7 @@ publishDir = "docs"
   #  date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
-  images = ["/imagee/avatar.png"]
+  images = ["/images/avatar.png"]
 
   #  App icon config
   [params.app]
@@ -108,7 +108,7 @@ publishDir = "docs"
       # URL of the LOGO
       logo = ""
       # title name
-      name = "🏆"
+      name = "🥝🍉"
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = ""
       # you can add extra information after the name (HTML format is supported), such as icons
@@ -122,13 +122,13 @@ publishDir = "docs"
     #  Custom content (HTML format is supported)
     custom = ''
     #  whether to show Hugo and theme info
-    hugo = true
+    hugo = true 
     #  whether to show copyright info
     copyright = true
     #  whether to show the author
-    author = true
+    author = true 
     # Site creation time
-    since = 2019
+    since = 2020
     # ICP info only in China (HTML format is supported)
     icp = ""
     # license info (HTML format is supported)
@@ -164,18 +164,18 @@ publishDir = "docs"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.png"
       #  title shown in home page (HTML format is supported)
-      title = ""
+      title = "vihowe"
       # subtitle shown in home page
       subtitle = "This is My New Hugo Site"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
-      social = true
+      social = false 
       #  disclaimer (HTML format is supported)
       disclaimer = ""
     # Home page posts
     [params.home.posts]
-      enable = true
+      enable = true 
       # special amount of posts in each home posts page
       paginate = 6
       #  replaced with hiddenFromHomePage in params.page
@@ -252,7 +252,7 @@ publishDir = "docs"
   #  Page config
   [params.page]
     #  whether to hide a page from home page
-    hiddenFromHomePage = false
+    hiddenFromHomePage = false 
     #  whether to hide a page from search results
     hiddenFromSearch = false
     #  whether to enable twemoji

@@ -2,6 +2,8 @@
 title: "Linux_11 15"
 date: 2020-11-15T22:27:48+08:00
 draft: false 
+tags: ['linux']
+categories: ['linux']
 ---
 # 每日Linux命令
 
