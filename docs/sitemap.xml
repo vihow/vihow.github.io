@@ -2,11 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/</loc><lastmod>2020-11-16T22:24:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2020-11-16T22:24:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/shell_basic1/</loc><lastmod>2020-11-16T22:24:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/linux_11-15/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/git_branch/</loc><lastmod>2020-11-12T15:28:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/first_post/</loc><lastmod>2020-11-11T22:18:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://example.org/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://example.org/tags/gpu/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/gpu_mm/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/shell_basic1/</loc><lastmod>2020-11-16T22:24:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/tags/linux/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/categories/linux/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/linux_11-15/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/git_branch/</loc><lastmod>2020-11-12T15:28:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://example.org/first_post/</loc><lastmod>2020-11-11T22:18:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
