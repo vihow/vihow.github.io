@@ -10,7 +10,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://example.org/" />
-<meta property="og:updated_time" content="2020-12-07T00:46:24+08:00" />
+<meta property="og:updated_time" content="2021-04-07T00:15:05+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="My New Hugo Site"/>
 <meta name="twitter:description" content=""/>
@@ -100,6 +100,16 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">vihowe</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/mpi_first/">MPI_first</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-04-07">2021-04-07</time></span></div><div class="content">MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
+  MPI_COMM_WORLD // a built-in communicator
+  每个进程有一个特定的rank
+获取进程rank:
+1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
+1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    </div><div class="post-footer">
+        <a href="/mpi_first/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mpi/">MPI</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/gpu_mm/">GPU_MM</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-12-07">2020-12-07</time></span></div><div class="content">GPU Memory Model </div><div class="post-footer">
         <a href="/gpu_mm/">Read More</a><div class="post-tags">
