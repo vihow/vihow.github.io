@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>linux - Tag - My New Hugo Site</title>
-        <link>http://example.org/tags/linux/</link>
-        <description>linux - Tag - My New Hugo Site</description>
+        <title>diary - Category - My New Hugo Site</title>
+        <link>http://example.org/categories/diary/</link>
+        <description>diary - Category - My New Hugo Site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@qq.com (vihowe)</managingEditor>
-            <webMaster>vihowe@qq.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>vihowe@qq.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/diary/" rel="self" type="application/rss+xml" /><item>
     <title>20/04/07 Diary</title>
     <link>http://example.org/20-04-07-diary/</link>
     <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
@@ -14,12 +14,5 @@
  -f 指定archive文件 -z 使用gzip处理archive文件，生成或解压缩.gz文件 -x 从archive中还原文件 -c 建立新的archive文件   tar -zxvf file.tar.gz 解压缩得到.tar的archive然后还原archive得到file tar -zcvf file.tar.gz file 打包并用gzip压缩    linux下的zip命令： 用于压缩文件
  -r 递归处理指定文件目录 -d 从.zip文件中删除指定文件 unzip 用于解压缩    latex多图并排
   1 2 3 4 5 6 7 8 9 10 11  \begin{figure}[H] \centering %图片全局居中 \subfigure[name1]{ \label{Fig.sub.1} \includegraphics[width=0.45\textwidth]{a.pdf}} \subfigure[name2]{ \label{Fig.sub.2} \includegraphics[width=0.45\textwidth]{b.pdf}} \caption{Main name} \label{Fig.main} \end{figure}    pandas  基本数据类型  Series: 一维带标签的数组， ndarray-like， dict-like DataFrame: 二维的数据结构，不同的列可能有不同的数据类型，相当于一个spreadsheet  1 2 3 4 5 6 7 8 9 10 11  In [37]: d = { &#34;one&#34;: pd.]]></description>
-</item><item>
-    <title>Linux_11 15</title>
-    <link>http://example.org/linux_11-15/</link>
-    <pubDate>Sun, 15 Nov 2020 22:27:48 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://example.org/linux_11-15/</guid>
-    <description><![CDATA[每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  ]]></description>
 </item></channel>
 </rss>
