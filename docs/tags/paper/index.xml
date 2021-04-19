@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Paper - Tag - My New Hugo Site</title>
+        <link>http://example.org/tags/paper/</link>
+        <description>Paper - Tag - My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@qq.com (vihowe)</managingEditor>
+            <webMaster>vihowe@qq.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/paper/" rel="self" type="application/rss+xml" /><item>
+    <title>04 19 21 Diary</title>
+    <link>http://example.org/04-19-21-diary/</link>
+    <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/04-19-21-diary/</guid>
+    <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
+  ill-fated: 不幸的，倒霉的   an ill-fated expedition 一场注定不成功的冒险
+   fascism: 法西斯主义
+  espouse: to support an idea, belife etc, especially a political one.
+   He espouses a variety of scientific, social and political causes.]]></description>
+</item></channel>
+</rss>

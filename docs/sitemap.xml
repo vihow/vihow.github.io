@@ -2,16 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/20-04-07-diary/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/categories/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/categories/diary/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/linux/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/pandas/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/posts/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/tags/mpi/</loc><lastmod>2021-04-07T00:15:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://example.org/mpi_first/</loc><lastmod>2021-04-07T00:15:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/04-19-21-diary/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/categories/diary/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/english/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://example.org/20-04-07-diary/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://example.org/tags/linux/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://example.org/tags/pandas/</loc><lastmod>2021-04-07T23:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://example.org/tags/mpi/</loc><lastmod>2021-04-07T00:15:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://example.org/mpi_first/</loc><lastmod>2021-04-07T00:15:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>http://example.org/tags/gpu/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/gpu_mm/</loc><lastmod>2020-12-07T00:46:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://example.org/shell_basic1/</loc><lastmod>2020-11-16T22:24:13&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
