@@ -1,0 +1,42 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - My New Hugo Site</title>
+        <link>http://example.org/tags/</link>
+        <description>Tags - Tag - My New Hugo Site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>English</title>
+    <link>http://example.org/tags/english/</link>
+    <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/english/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>linux</title>
+    <link>http://example.org/tags/linux/</link>
+    <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/linux/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>pandas</title>
+    <link>http://example.org/tags/pandas/</link>
+    <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/pandas/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>MPI</title>
+    <link>http://example.org/tags/mpi/</link>
+    <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/mpi/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>GPU</title>
+    <link>http://example.org/tags/gpu/</link>
+    <pubDate>Mon, 07 Dec 2020 00:46:24 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/gpu/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
