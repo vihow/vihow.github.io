@@ -6,21 +6,21 @@
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>Shell_basic1 - 🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="Shell_basic1" />
-<meta property="og:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行 历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  gcc test." />
+<meta property="og:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  1  gcc test." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/shell_basic1/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://vihowe.github.io/shell_basic1/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-16T22:24:13+08:00" />
 <meta property="article:modified_time" content="2020-11-16T22:24:13+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://example.org/logo.png"/>
+<meta name="twitter:image" content="https://vihowe.github.io/logo.png"/>
 
 <meta name="twitter:title" content="Shell_basic1"/>
-<meta name="twitter:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行 历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  gcc test."/>
+<meta name="twitter:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  1  gcc test."/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/shell_basic1/" /><link rel="prev" href="http://example.org/linux_11-15/" /><link rel="next" href="http://example.org/gpu_mm/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/shell_basic1/" /><link rel="prev" href="https://vihowe.github.io/linux_11-15/" /><link rel="next" href="https://vihowe.github.io/gpu_mm/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +28,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/example.org\/shell_basic1\/"
-        },"genre": "posts","wordcount":  73 ,
-        "url": "http:\/\/example.org\/shell_basic1\/","datePublished": "2020-11-16T22:24:13+08:00","dateModified": "2020-11-16T22:24:13+08:00","publisher": {
+            "@id": "https:\/\/vihowe.github.io\/shell_basic1\/"
+        },"genre": "posts","wordcount":  78 ,
+        "url": "https:\/\/vihowe.github.io\/shell_basic1\/","datePublished": "2020-11-16T22:24:13+08:00","dateModified": "2020-11-16T22:24:13+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Shell_basic1</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-16">2020-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;73 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-16">2020-11-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;78 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -132,11 +132,21 @@
 <li>当bash作为交互式shell启动时：自动执行~/.bashrc</li>
 </ul>
 <h1 id="脚本文件">脚本文件</h1>
-<pre tabindex="0"><code>bash -x &lt;.sh&gt;: 打印每一行命令
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bash -x &lt;.sh&gt;: 打印每一行命令
 
 ./xx.sh:  在子进程中执行
 . xx.sh  =  source xx.sh：  在当前shell进程中执行
-</code></pre><h2 id="历史与别名">历史与别名</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="历史与别名">历史与别名</h2>
 <h3 id="历史表">历史表</h3>
 <ul>
 <li>先前键入的命令存于历史表 编号递增，FIFO刷新</li>
@@ -164,8 +174,15 @@
 <li>2&gt; filename: stderr输出到文件</li>
 <li>2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件</li>
 </ul>
-<pre tabindex="0"><code>gcc test.c &gt; test.err &gt; 2&gt;&amp;1
-</code></pre><ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">gcc test.c &gt; test.err &gt; 2&gt;&amp;1
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>管道：仅把stdout进行管道， 如果需将stderr管道 2&gt;&amp;1</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
@@ -181,7 +198,7 @@
                             <a class="link-to-markdown" href="/shell_basic1/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/shell_basic1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://vihowe.github.io/shell_basic1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://vihowe.github.io/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>

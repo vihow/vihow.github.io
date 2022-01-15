@@ -1,20 +1,20 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MPI - Tag - 🥭未好🧑‍💻</title>
-        <link>http://example.org/tags/mpi/</link>
+        <link>https://vihowe.github.io/tags/mpi/</link>
         <description>MPI - Tag - 🥭未好🧑‍💻</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/mpi/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/tags/mpi/" rel="self" type="application/rss+xml" /><item>
     <title>MPI_first</title>
-    <link>http://example.org/mpi_first/</link>
+    <link>https://vihowe.github.io/mpi_first/</link>
     <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
     <author>vihowe</author>
-    <guid>http://example.org/mpi_first/</guid>
+    <guid>https://vihowe.github.io/mpi_first/</guid>
     <description><![CDATA[MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
   MPI_COMM_WORLD // a built-in communicator
   每个进程有一个特定的rank
 获取进程rank:
-int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank); 获取总的并行进程数：
-int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size) Message sending and receiving  发送消息  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )  接收消息  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )    task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    ]]></description>
+1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
+1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    ]]></description>
 </item></channel>
 </rss>

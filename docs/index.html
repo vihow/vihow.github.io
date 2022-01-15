@@ -9,22 +9,22 @@
     <title>🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="🥭未好🧑‍💻" />
 <meta property="og:description" content="This is My New Hugo Site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/" /><meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="og:url" content="https://vihowe.github.io/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://example.org/logo.png"/>
+<meta name="twitter:image" content="https://vihowe.github.io/logo.png"/>
 
 <meta name="twitter:title" content="🥭未好🧑‍💻"/>
 <meta name="twitter:description" content="This is My New Hugo Site"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻">
     <link rel="feed" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "http:\/\/example.org\/","inLanguage": "en","author": {
+        "url": "https:\/\/vihowe.github.io\/","inLanguage": "en","author": {
                 "@type": "Person",
                 "name": "vihowe"
             },"description": "This is My New Hugo Site","name": "🥭未好🧑‍💻"
@@ -119,7 +119,7 @@
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span>&nbsp;<span class="post-publish">published on <time datetime="2021-04-07">2021-04-07</time></span>&nbsp;<span class="post-category">included in <a href="/categories/diary/"><i class="far fa-folder fa-fw"></i>diary</a></span></div><div class="content">tricks汇总   linux下的tar命令
  -f 指定archive文件 -z 使用gzip处理archive文件，生成或解压缩.gz文件 -x 从archive中还原文件 -c 建立新的archive文件   tar -zxvf file.tar.gz 解压缩得到.tar的archive然后还原archive得到file tar -zcvf file.tar.gz file 打包并用gzip压缩    linux下的zip命令： 用于压缩文件
  -r 递归处理指定文件目录 -d 从.zip文件中删除指定文件 unzip 用于解压缩    latex多图并排
-  \begin{figure}[H] \centering %图片全局居中 \subfigure[name1]{ \label{Fig.sub.1} \includegraphics[width=0.45\textwidth]{a.pdf}} \subfigure[name2]{ \label{Fig.sub.2} \includegraphics[width=0.45\textwidth]{b.pdf}} \caption{Main name} \label{Fig.main} \end{figure}  pandas  基本数据类型  Series: 一维带标签的数组， ndarray-like， dict-like DataFrame: 二维的数据结构，不同的列可能有不同的数据类型，相当于一个spreadsheet  In [37]: d = { &quot;one&quot;: pd.</div><div class="post-footer">
+  1 2 3 4 5 6 7 8 9 10 11  \begin{figure}[H] \centering %图片全局居中 \subfigure[name1]{ \label{Fig.sub.1} \includegraphics[width=0.45\textwidth]{a.pdf}} \subfigure[name2]{ \label{Fig.sub.2} \includegraphics[width=0.45\textwidth]{b.pdf}} \caption{Main name} \label{Fig.main} \end{figure}    pandas  基本数据类型  Series: 一维带标签的数组， ndarray-like， dict-like DataFrame: 二维的数据结构，不同的列可能有不同的数据类型，相当于一个spreadsheet  1 2 3 4 5 6 7 8 9 10 11  In [37]: d = { &#34;one&#34;: pd.</div><div class="post-footer">
         <a href="/20-04-07-diary/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">linux</a>,&nbsp;<a href="/tags/pandas/">pandas</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
@@ -128,8 +128,8 @@
   MPI_COMM_WORLD // a built-in communicator
   每个进程有一个特定的rank
 获取进程rank:
-int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank); 获取总的并行进程数：
-int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size) Message sending and receiving  发送消息  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )  接收消息  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )    task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    </div><div class="post-footer">
+1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
+1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    </div><div class="post-footer">
         <a href="/mpi_first/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mpi/">MPI</a></div></div>
 </article><ul class="pagination"><li class="page-item active">

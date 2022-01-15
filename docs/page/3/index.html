@@ -9,22 +9,22 @@
     <title>🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="🥭未好🧑‍💻" />
 <meta property="og:description" content="This is My New Hugo Site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/" /><meta property="og:image" content="http://example.org/logo.png"/>
+<meta property="og:url" content="https://vihowe.github.io/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://example.org/logo.png"/>
+<meta name="twitter:image" content="https://vihowe.github.io/logo.png"/>
 
 <meta name="twitter:title" content="🥭未好🧑‍💻"/>
 <meta name="twitter:description" content="This is My New Hugo Site"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻">
     <link rel="feed" href="/index.xml" type="application/rss+xml" title="🥭未好🧑‍💻"><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "url": "http:\/\/example.org\/","inLanguage": "en","author": {
+        "url": "https:\/\/vihowe.github.io\/","inLanguage": "en","author": {
                 "@type": "Person",
                 "name": "vihowe"
             },"description": "This is My New Hugo Site","name": "🥭未好🧑‍💻"
@@ -105,6 +105,11 @@
         <a href="/first_post/">First_post</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-11-11">2020-11-11</time></span></div><div class="content">Hello world. 🚀</div><div class="post-footer">
         <a href="/first_post/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/kungfu/"></a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span>&nbsp;<span class="post-publish">published on <time datetime="0001-01-01">0001-01-01</time></span></div><div class="content"> title: &ldquo;KungFu: Making Training in Distributed Machine Learning Adaptive&rdquo; tags: [&ldquo;DDL&rdquo;] categories: [&ldquo;papers&rdquo;] KungFu: Making Training in Distributed Machine Learning Adaptive  一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）, 系统参数（worker 数量，通信拓扑） 这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述 如何在训练过程中改变hyper和system 参数。 感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。
+ Adaption Policies  提供了一层软件抽象给用户，用户可以定制自己的policy。 关键点：framework-independent 举了一个例子：根据GNS（gradient noise sclae）来动态改变bs  最重要的两点：  如何进行低开销的metric monitoring 如何根据metric和policy在分布式环境下做出work stage的management  </div><div class="post-footer">
+        <a href="/kungfu/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

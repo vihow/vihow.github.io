@@ -5,42 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <title>MPI_first - 🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="MPI_first" />
-<meta property="og:description" content="MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
-  MPI_COMM_WORLD // a built-in communicator
-  每个进程有一个特定的rank
-获取进程rank:
-1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
-1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    " />
+    <title> - 🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="" />
+<meta property="og:description" content=" title: &ldquo;KungFu: Making Training in Distributed Machine Learning Adaptive&rdquo; tags: [&ldquo;DDL&rdquo;] categories: [&ldquo;papers&rdquo;] KungFu: Making Training in Distributed Machine Learning Adaptive  一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）, 系统参数（worker 数量，通信拓扑） 这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述 如何在训练过程中改变hyper和system 参数。 感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。
+ Adaption Policies  提供了一层软件抽象给用户，用户可以定制自己的policy。 关键点：framework-independent 举了一个例子：根据GNS（gradient noise sclae）来动态改变bs  最重要的两点：  如何进行低开销的metric monitoring 如何根据metric和policy在分布式环境下做出work stage的management  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://vihowe.github.io/mpi_first/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-04-07T00:15:05+08:00" />
-<meta property="article:modified_time" content="2021-04-07T00:15:05+08:00" />
+<meta property="og:url" content="https://vihowe.github.io/kungfu/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/><meta property="article:section" content="posts" />
+
+
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://vihowe.github.io/logo.png"/>
 
-<meta name="twitter:title" content="MPI_first"/>
-<meta name="twitter:description" content="MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
-  MPI_COMM_WORLD // a built-in communicator
-  每个进程有一个特定的rank
-获取进程rank:
-1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
-1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    "/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=" title: &ldquo;KungFu: Making Training in Distributed Machine Learning Adaptive&rdquo; tags: [&ldquo;DDL&rdquo;] categories: [&ldquo;papers&rdquo;] KungFu: Making Training in Distributed Machine Learning Adaptive  一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）, 系统参数（worker 数量，通信拓扑） 这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述 如何在训练过程中改变hyper和system 参数。 感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。
+ Adaption Policies  提供了一层软件抽象给用户，用户可以定制自己的policy。 关键点：framework-independent 举了一个例子：根据GNS（gradient noise sclae）来动态改变bs  最重要的两点：  如何进行低开销的metric monitoring 如何根据metric和policy在分布式环境下做出work stage的management  "/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/mpi_first/" /><link rel="prev" href="https://vihowe.github.io/gpu_mm/" /><link rel="next" href="https://vihowe.github.io/20-04-07-diary/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/kungfu/" /><link rel="next" href="https://vihowe.github.io/first_post/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "MPI_first",
+        "headline": "",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/vihowe.github.io\/mpi_first\/"
-        },"genre": "posts","keywords": "MPI","wordcount":  82 ,
-        "url": "https:\/\/vihowe.github.io\/mpi_first\/","datePublished": "2021-04-07T00:15:05+08:00","dateModified": "2021-04-07T00:15:05+08:00","publisher": {
+            "@id": "https:\/\/vihowe.github.io\/kungfu\/"
+        },"genre": "posts","wordcount":  44 ,
+        "url": "https:\/\/vihowe.github.io\/kungfu\/","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -114,9 +106,9 @@
         <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">MPI_first</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX"></h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-04-07">2021-04-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;82 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;44 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
@@ -125,137 +117,66 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#message-sending-and-receiving">Message sending and receiving</a></li>
+    <li><a href="#categories-papers">title: &ldquo;KungFu: Making Training in Distributed Machine Learning Adaptive&rdquo;
+tags: [&ldquo;DDL&rdquo;]
+categories: [&ldquo;papers&rdquo;]</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#adaption-policies">Adaption Policies</a></li>
+    <li><a href="#最重要的两点">最重要的两点：</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="mpi-初探">MPI 初探</h1>
+            </div><div class="content" id="content"><hr>
+<h2 id="categories-papers">title: &ldquo;KungFu: Making Training in Distributed Machine Learning Adaptive&rdquo;
+tags: [&ldquo;DDL&rdquo;]
+categories: [&ldquo;papers&rdquo;]</h2>
+<h1 id="kungfu-making-training-in-distributed-machine-learning-adaptive">KungFu: Making Training in Distributed Machine Learning Adaptive</h1>
+<blockquote>
+<p>一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）,
+系统参数（worker 数量，通信拓扑）
+这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述
+如何在训练过程中改变hyper和system 参数。
+感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。</p>
+</blockquote>
+<h2 id="adaption-policies">Adaption Policies</h2>
 <ul>
-<li>
-<p>MPI_Init(NULL, NULL); // 两个参数保留未来使用</p>
-</li>
-<li>
-<p>MPI_COMM_WORLD    // a built-in communicator</p>
-</li>
+<li>提供了一层软件抽象给用户，用户可以定制自己的policy。
+关键点：framework-independent
+举了一个例子：根据GNS（gradient noise sclae）来动态改变bs</li>
 </ul>
-<p>每个进程有一个特定的rank</p>
-<p>获取进程rank:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">int world_rank;
-MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);
-</code></pre></td></tr></table>
-</div>
-</div><p>获取总的并行进程数：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">int world_size;
-MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="message-sending-and-receiving">Message sending and receiving</h2>
+<h2 id="最重要的两点">最重要的两点：</h2>
 <ul>
-<li>发送消息</li>
+<li>如何进行低开销的metric monitoring</li>
+<li>如何根据metric和policy在分布式环境下做出work stage的management</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">MPI_Send(
-    void* data,
-    int count,
-    MPI_Type datatype,
-    int destination,
-    int tag,
-    MPI_Comm communicator
-)
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>接收消息</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">MPI_Receive(
-    void* data,
-    int count,
-    MPI_Type datatype,
-    int source,
-    int tag,
-    MPI_Comm communicator
-)
-</code></pre></td></tr></table>
-</div>
-</div><table>
-<thead>
-<tr>
-<th>task</th>
-<th>due</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>学习pytorch的自动求导机制</td>
-<td>4/10</td>
-</tr>
-<tr>
-<td>学习cmake和make相关知识</td>
-<td>4/10</td>
-</tr>
-</tbody>
-</table>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2021-04-07</span>
+                <span>Updated on 0001-01-01</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/mpi_first/index.md" target="_blank">Read Markdown</a>
+                            <a class="link-to-markdown" href="/kungfu/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first" data-via="xxxx" data-hashtags="MPI"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://vihowe.github.io/mpi_first/" data-hashtag="MPI"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://vihowe.github.io/mpi_first/" data-title="MPI_first"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://vihowe.github.io/kungfu/" data-title="" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://vihowe.github.io/kungfu/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://vihowe.github.io/kungfu/" data-title="" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://vihowe.github.io/kungfu/" data-title=""><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://vihowe.github.io/kungfu/" data-title=""><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://vihowe.github.io/kungfu/" data-title="" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://vihowe.github.io/kungfu/" data-title="" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://vihowe.github.io/kungfu/" data-title=""><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mpi/">MPI</a></section>
+        <section class="post-tags"></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/gpu_mm/" class="prev" rel="prev" title="GPU_MM"><i class="fas fa-angle-left fa-fw"></i>GPU_MM</a>
-            <a href="/20-04-07-diary/" class="next" rel="next" title="20/04/07 Diary">20/04/07 Diary<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav">
+            <a href="/first_post/" class="next" rel="next" title="First_post">First_post<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>
       </main><footer class="footer">
