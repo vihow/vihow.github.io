@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
@@ -13,12 +13,12 @@
 int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank); 获取总的并行进程数：
 int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size) Message sending and receiving  发送消息  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )  接收消息  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )    task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/mpi_first/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/mpi_first/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-07T00:15:05+08:00" />
 <meta property="article:modified_time" content="2021-04-07T00:15:05+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
 
 <meta name="twitter:title" content="MPI_first"/>
 <meta name="twitter:description" content="MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
@@ -30,7 +30,7 @@ int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size) Message sending a
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/mpi_first/" /><link rel="prev" href="http://localhost:1313/matplot_1/" /><link rel="next" href="http://localhost:1313/20-04-07-diary/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/mpi_first/" /><link rel="prev" href="http://example.org/gpu_mm/" /><link rel="next" href="http://example.org/20-04-07-diary/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -38,9 +38,9 @@ int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size) Message sending a
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/mpi_first\/"
+            "@id": "http:\/\/example.org\/mpi_first\/"
         },"genre": "posts","keywords": "MPI","wordcount":  62 ,
-        "url": "http:\/\/localhost:1313\/mpi_first\/","datePublished": "2021-04-07T00:15:05+08:00","dateModified": "2021-04-07T00:15:05+08:00","publisher": {
+        "url": "http:\/\/example.org\/mpi_first\/","datePublished": "2021-04-07T00:15:05+08:00","dateModified": "2021-04-07T00:15:05+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -198,7 +198,7 @@ MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)
                             <a class="link-to-markdown" href="/mpi_first/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first" data-via="xxxx" data-hashtags="MPI"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/mpi_first/" data-hashtag="MPI"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://localhost:1313/mpi_first/" data-title="MPI_first"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/mpi_first/" data-title="MPI_first" data-via="xxxx" data-hashtags="MPI"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/mpi_first/" data-hashtag="MPI"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/mpi_first/" data-title="MPI_first" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/mpi_first/" data-title="MPI_first"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/mpi_first/" data-title="MPI_first"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/mpi_first/" data-title="MPI_first" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/mpi_first/" data-title="MPI_first" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/mpi_first/" data-title="MPI_first"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -210,10 +210,10 @@ MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)
         </section>
     </div>
 
-    <div class="post-nav"><a href="/matplot_1/" class="prev" rel="prev" title="Matplot_1"><i class="fas fa-angle-left fa-fw"></i>Matplot_1</a>
+    <div class="post-nav"><a href="/gpu_mm/" class="prev" rel="prev" title="GPU_MM"><i class="fas fa-angle-left fa-fw"></i>GPU_MM</a>
             <a href="/20-04-07-diary/" class="next" rel="next" title="20/04/07 Diary">20/04/07 Diary<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
       </main><footer class="footer">
     <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.2">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="noopener noreffer" title="FixIt 0.2.11">
             <i class="fa-stack fa-xs">

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
@@ -8,19 +8,19 @@
     <title>Shell_basic1 - 🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="Shell_basic1" />
 <meta property="og:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行 历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  gcc test." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/shell_basic1/" /><meta property="og:image" content="http://localhost:1313/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/shell_basic1/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-16T22:24:13+08:00" />
 <meta property="article:modified_time" content="2020-11-16T22:24:13+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="http://localhost:1313/logo.png"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
 
 <meta name="twitter:title" content="Shell_basic1"/>
 <meta name="twitter:description" content="自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行 历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD&#39; base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  gcc test."/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/shell_basic1/" /><link rel="prev" href="http://localhost:1313/linux_11-15/" /><link rel="next" href="http://localhost:1313/cpplearning11_20/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/shell_basic1/" /><link rel="prev" href="http://example.org/linux_11-15/" /><link rel="next" href="http://example.org/gpu_mm/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -28,9 +28,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/shell_basic1\/"
+            "@id": "http:\/\/example.org\/shell_basic1\/"
         },"genre": "posts","wordcount":  73 ,
-        "url": "http:\/\/localhost:1313\/shell_basic1\/","datePublished": "2020-11-16T22:24:13+08:00","dateModified": "2020-11-16T22:24:13+08:00","publisher": {
+        "url": "http:\/\/example.org\/shell_basic1\/","datePublished": "2020-11-16T22:24:13+08:00","dateModified": "2020-11-16T22:24:13+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -181,7 +181,7 @@
                             <a class="link-to-markdown" href="/shell_basic1/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/shell_basic1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://localhost:1313/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/shell_basic1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://example.org/shell_basic1/" data-title="Shell_basic1"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
@@ -194,9 +194,9 @@
     </div>
 
     <div class="post-nav"><a href="/linux_11-15/" class="prev" rel="prev" title="Linux_11 15"><i class="fas fa-angle-left fa-fw"></i>Linux_11 15</a>
-            <a href="/cpplearning11_20/" class="next" rel="next" title="CppLearning11_20">CppLearning11_20<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/gpu_mm/" class="next" rel="next" title="GPU_MM">GPU_MM<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<div id="comments"></div></article></div>
       </main><footer class="footer">
     <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.2">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="noopener noreffer" title="FixIt 0.2.11">
             <i class="fa-stack fa-xs">

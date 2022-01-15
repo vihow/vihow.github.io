@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>English - Tag - 🥭未好🧑‍💻</title>
-        <link>http://localhost:1313/tags/english/</link>
+        <link>http://example.org/tags/english/</link>
         <description>English - Tag - 🥭未好🧑‍💻</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/english/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/english/" rel="self" type="application/rss+xml" /><item>
     <title>04 19 21 Diary</title>
-    <link>http://localhost:1313/04-19-21-diary/</link>
+    <link>http://example.org/04-19-21-diary/</link>
     <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
     <author>vihowe</author>
-    <guid>http://localhost:1313/04-19-21-diary/</guid>
+    <guid>http://example.org/04-19-21-diary/</guid>
     <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
   ill-fated: 不幸的，倒霉的   an ill-fated expedition 一场注定不成功的冒险
    fascism: 法西斯主义
