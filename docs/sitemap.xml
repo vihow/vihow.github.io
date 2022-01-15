@@ -2,9 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://vihowe.github.io/kungfu/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/posts/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://vihowe.github.io/firstpost/</loc><lastmod>2022-01-15T15:23:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/posts/</loc><lastmod>2022-01-15T15:23:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/</loc><lastmod>2022-01-15T15:23:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://vihowe.github.io/movies/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://vihowe.github.io/movies/my-first-post/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://vihowe.github.io/04-19-21-diary/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -23,5 +24,4 @@
             <loc>https://vihowe.github.io/categories/linux/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://vihowe.github.io/linux_11-15/</loc><lastmod>2020-11-15T22:27:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://vihowe.github.io/git_branch/</loc><lastmod>2020-11-12T15:28:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://vihowe.github.io/first_post/</loc><lastmod>2020-11-11T22:18:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://vihowe.github.io/kungfu/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://vihowe.github.io/first_post/</loc><lastmod>2020-11-11T22:18:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

@@ -1,17 +1,6 @@
-# 
+# Kungfu
 
-<!--
- * @Author: vihowe
- * @Date: 2022-01-15 22:24:01
- * @LastEditTime: 2022-01-15 23:44:08
- * @FilePath: /myBlog/content/posts/kungfu/index.md
--->
----
-title: "KungFu: Making Training in Distributed Machine Learning Adaptive"
-tags: ["DDL"]
-categories: ["papers"]
-date: 2022-01-15T20:23:00+08:00
----
+
 # KungFu: Making Training in Distributed Machine Learning Adaptive
 
 > 一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）,
