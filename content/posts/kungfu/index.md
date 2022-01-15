@@ -1,13 +1,14 @@
 <!--
  * @Author: vihowe
  * @Date: 2022-01-15 22:24:01
- * @LastEditTime: 2022-01-15 23:38:38
+ * @LastEditTime: 2022-01-15 23:44:08
  * @FilePath: /myBlog/content/posts/kungfu/index.md
 -->
 ---
 title: "KungFu: Making Training in Distributed Machine Learning Adaptive"
 tags: ["DDL"]
 categories: ["papers"]
+date: 2022-01-15T20:23:00+08:00
 ---
 # KungFu: Making Training in Distributed Machine Learning Adaptive
 
