@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>linux - Category - 🥭未好🧑‍💻</title>
+        <link>http://localhost:1313/categories/linux/</link>
+        <description>linux - Category - 🥭未好🧑‍💻</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
+            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Sun, 15 Nov 2020 22:27:48 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux_11 15</title>
+    <link>http://localhost:1313/linux_11-15/</link>
+    <pubDate>Sun, 15 Nov 2020 22:27:48 &#43;0800</pubDate>
+    <author>vihowe</author>
+    <guid>http://localhost:1313/linux_11-15/</guid>
+    <description><![CDATA[每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  ]]></description>
+</item></channel>
+</rss>
