@@ -4,7 +4,14 @@
         <link>http://example.org/posts/</link>
         <description>All Posts | 🥭未好🧑‍💻</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Sat, 15 Jan 2022 15:23:00 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>First</title>
+    <link>http://example.org/firstpost/</link>
+    <pubDate>Sat, 15 Jan 2022 15:23:00 &#43;0800</pubDate>
+    <author>vihowe</author>
+    <guid>http://example.org/firstpost/</guid>
+    <description><![CDATA[Here I am. ]]></description>
+</item><item>
     <title>04 19 21 Diary</title>
     <link>http://example.org/04-19-21-diary/</link>
     <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
