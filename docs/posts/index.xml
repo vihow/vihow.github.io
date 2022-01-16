@@ -1,94 +1,94 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>All Posts - 🥭未好🧑‍💻</title>
-        <link>https://vihowe.github.io/posts/</link>
-        <description>All Posts | 🥭未好🧑‍💻</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Sat, 15 Jan 2022 23:50:00 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Kungfu</title>
-    <link>https://vihowe.github.io/kungfu/</link>
-    <pubDate>Sat, 15 Jan 2022 23:50:00 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/kungfu/</guid>
-    <description><![CDATA[KungFu: Making Training in Distributed Machine Learning Adaptive  一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）, 系统参数（worker 数量，通信拓扑） 这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述 如何在训练过程中改变hyper和system 参数。 感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。
+  <channel>
+    <title>All Posts - 🥭未好🧑‍💻</title>
+    <link>https://vihowe.github.io/posts/</link>
+    <description>All Posts | 🥭未好🧑‍💻</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
+      <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Sat, 15 Jan 2022 23:50:00 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Kungfu</title>
+  <link>https://vihowe.github.io/kungfu/</link>
+  <pubDate>Sat, 15 Jan 2022 23:50:00 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/kungfu/</guid>
+  <description><![CDATA[KungFu: Making Training in Distributed Machine Learning Adaptive  一篇讲adaptive 分布式训练框架设计与实现的论文。在分布式训练中，影响训练的主要有超参（bs，lr）, 系统参数（worker 数量，通信拓扑） 这篇文章针对TensorFlow开发了一个分布式ML library。用户可以借此设计一些Adaptation Policy来描述 如何在训练过程中改变hyper和system 参数。 感觉更多是系统实现上的思考，如何monitor各种metric，以及如何完成相应的control operation。
  Adaption Policies  提供了一层软件抽象给用户，用户可以定制自己的policy。 关键点：framework-independent 举了一个例子：根据GNS（gradient noise sclae）来动态改变bs  最重要的两点：  如何进行低开销的metric monitoring 如何根据metric和policy在分布式环境下做出work stage的management  Monitoring 主要是monitor worker的performance和gradient.  对于一些需要实时梯度信息，比如GNS的policy，这个metric的计算需要所有worker的gradient信息， Kungfu会把所这个monitor需求转化为monitor op(例如对梯度的再次处理）嵌入到data flow中，这样就可以直接使用到data flow 计算出的中间结果。实现了低开销梯度信息采集。  由于monitor metric需要全局的信息，所以需要collective communication，为了防止block training， kungfu设计了一层 asynchronous collective communication。
 collective communication for dataflows 在参数更新这一环节，一些metric可以借此完成全局metric的计算，还有一些metric需要额外的collective communication. Kungfu利用async来overlap。 另一个问题是，不同worker完成梯度的顺序不一样，async可能会导致inconsistency。Horovod采用了 一个中心式的coordinator，来track每个worker上的ready gradient  named collective messages: 每一个named collective message携带两个信息：data&ndash; 具体的gradient data； key&ndash;指出gradient data的归属地。 named collective stages: 每收到一个named collective message，worker识别出它的 key，然后提取出gradient data，放进states中的data buffer进行accumulate，state中的control 用来记录收集了多少了，下一个hop是哪个，如果收集满了就返回结果。  最后还讲了怎么优化了下NCCL，按下不表。]]></description>
 </item><item>
-    <title>First</title>
-    <link>https://vihowe.github.io/firstpost/</link>
-    <pubDate>Sat, 15 Jan 2022 15:23:00 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/firstpost/</guid>
-    <description><![CDATA[Here I am. ]]></description>
+  <title>First</title>
+  <link>https://vihowe.github.io/firstpost/</link>
+  <pubDate>Sat, 15 Jan 2022 15:23:00 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/firstpost/</guid>
+  <description><![CDATA[Here I am. ]]></description>
 </item><item>
-    <title>04 19 21 Diary</title>
-    <link>https://vihowe.github.io/04-19-21-diary/</link>
-    <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/04-19-21-diary/</guid>
-    <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
+  <title>04 19 21 Diary</title>
+  <link>https://vihowe.github.io/04-19-21-diary/</link>
+  <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/04-19-21-diary/</guid>
+  <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
   ill-fated: 不幸的，倒霉的   an ill-fated expedition 一场注定不成功的冒险
    fascism: 法西斯主义
   espouse: to support an idea, belife etc, especially a political one.
    He espouses a variety of scientific, social and political causes.]]></description>
 </item><item>
-    <title>20/04/07 Diary</title>
-    <link>https://vihowe.github.io/20-04-07-diary/</link>
-    <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/20-04-07-diary/</guid>
-    <description><![CDATA[tricks汇总   linux下的tar命令
+  <title>20/04/07 Diary</title>
+  <link>https://vihowe.github.io/20-04-07-diary/</link>
+  <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/20-04-07-diary/</guid>
+  <description><![CDATA[tricks汇总   linux下的tar命令
  -f 指定archive文件 -z 使用gzip处理archive文件，生成或解压缩.gz文件 -x 从archive中还原文件 -c 建立新的archive文件   tar -zxvf file.tar.gz 解压缩得到.tar的archive然后还原archive得到file tar -zcvf file.tar.gz file 打包并用gzip压缩    linux下的zip命令： 用于压缩文件
  -r 递归处理指定文件目录 -d 从.zip文件中删除指定文件 unzip 用于解压缩    latex多图并排
   1 2 3 4 5 6 7 8 9 10 11  \begin{figure}[H] \centering %图片全局居中 \subfigure[name1]{ \label{Fig.sub.1} \includegraphics[width=0.45\textwidth]{a.pdf}} \subfigure[name2]{ \label{Fig.sub.2} \includegraphics[width=0.45\textwidth]{b.pdf}} \caption{Main name} \label{Fig.main} \end{figure}    pandas  基本数据类型  Series: 一维带标签的数组， ndarray-like， dict-like DataFrame: 二维的数据结构，不同的列可能有不同的数据类型，相当于一个spreadsheet  1 2 3 4 5 6 7 8 9 10 11  In [37]: d = { &#34;one&#34;: pd.]]></description>
 </item><item>
-    <title>MPI_first</title>
-    <link>https://vihowe.github.io/mpi_first/</link>
-    <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/mpi_first/</guid>
-    <description><![CDATA[MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
+  <title>MPI_first</title>
+  <link>https://vihowe.github.io/mpi_first/</link>
+  <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/mpi_first/</guid>
+  <description><![CDATA[MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
   MPI_COMM_WORLD // a built-in communicator
   每个进程有一个特定的rank
 获取进程rank:
 1 2  int world_rank; MPI_Comm_Rank(MPI_COMM_WORLD, &amp;world_rank);   获取总的并行进程数：
 1 2  int world_size; MPI_Comm_Size(MPI_COMM_WORLD, &amp;world_size)   Message sending and receiving  发送消息  1 2 3 4 5 6 7 8  MPI_Send( void* data, int count, MPI_Type datatype, int destination, int tag, MPI_Comm communicator )    接收消息  1 2 3 4 5 6 7 8  MPI_Receive( void* data, int count, MPI_Type datatype, int source, int tag, MPI_Comm communicator )      task due     学习pytorch的自动求导机制 4/10   学习cmake和make相关知识 4/10    ]]></description>
 </item><item>
-    <title>GPU_MM</title>
-    <link>https://vihowe.github.io/gpu_mm/</link>
-    <pubDate>Mon, 07 Dec 2020 00:46:24 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/gpu_mm/</guid>
-    <description><![CDATA[GPU Memory Model ]]></description>
+  <title>GPU_MM</title>
+  <link>https://vihowe.github.io/gpu_mm/</link>
+  <pubDate>Mon, 07 Dec 2020 00:46:24 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/gpu_mm/</guid>
+  <description><![CDATA[GPU Memory Model ]]></description>
 </item><item>
-    <title>Shell_basic1</title>
-    <link>https://vihowe.github.io/shell_basic1/</link>
-    <pubDate>Mon, 16 Nov 2020 22:24:13 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/shell_basic1/</guid>
-    <description><![CDATA[自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD' base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  1  gcc test.]]></description>
+  <title>Shell_basic1</title>
+  <link>https://vihowe.github.io/shell_basic1/</link>
+  <pubDate>Mon, 16 Nov 2020 22:24:13 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/shell_basic1/</guid>
+  <description><![CDATA[自动执行的一批命令（用户级别）  当bash最为注册shell被启动时：自动执行~/.bash_profile 当bash作为注册shell退出时：自动执行~/.bash_logout 当bash作为交互式shell启动时：自动执行~/.bashrc  脚本文件 1 2 3 4  bash -x &lt;.sh&gt;: 打印每一行命令 ./xx.sh: 在子进程中执行 . xx.sh = source xx.sh： 在当前shell进程中执行   历史与别名 历史表  先前键入的命令存于历史表 编号递增，FIFO刷新 表大小由变量HISTSIZE设定，该配置位于~/.bashrc history：查看历史命令 !! : 引用上一命令 !str ： 以str开头的最近使用的命令  别名和别名替换  alias alias rm = &lsquo;rm -i&rsquo;  输入重定向 stdin 0号文件描述符  &lt; file: 从file中获取输入 &lt;&lt; STR: 从shell中获取输入，直到再次遇到字符串STR，同时会对特殊变量进行替换，例如`date`，若禁止替换，使用 &lt;&lt; &lsquo;STR&rsquo; &lt;&lt;&lt; ABCD: 获得的输入即为&rsquo;ABCD' base64：将输入变为base64编码  输出重定向与管道  &gt; filename: stdout输出到文件（覆盖） &gt;&gt; filename: stdout输出到文件（追加） 2&gt; filename: stderr输出到文件 2&gt;&amp;1 filename: 将文件句柄2重定向到文件描述符1指向的文件  1  gcc test.]]></description>
 </item><item>
-    <title>Linux_11 15</title>
-    <link>https://vihowe.github.io/linux_11-15/</link>
-    <pubDate>Sun, 15 Nov 2020 22:27:48 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/linux_11-15/</guid>
-    <description><![CDATA[每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  ]]></description>
+  <title>Linux_11 15</title>
+  <link>https://vihowe.github.io/linux_11-15/</link>
+  <pubDate>Sun, 15 Nov 2020 22:27:48 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/linux_11-15/</guid>
+  <description><![CDATA[每日Linux命令 1. watch  周期性的执行一个命令并展示其输出 -n(&ndash;interval) &lt;secs&gt; 间隔多少秒执行  2. nohup  运行一个命令，对hangup免疫，连接远程主机即使终端连接中断也可以在server端继续执行。 nohup &lt;commond&gt;  3. terminal, shell , console  terminal = tty(the first kind of terminal (类似于打字机))， 现代意义的terminal，tty都是软件意义上的，text input/output environment. console(控制台)：physical terminal(bind with 键盘) shell: 命令行的interpreter  ]]></description>
 </item><item>
-    <title>Git_branch</title>
-    <link>https://vihowe.github.io/git_branch/</link>
-    <pubDate>Thu, 12 Nov 2020 15:28:07 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/git_branch/</guid>
-    <description><![CDATA[Git-1 远程仓库 如何新添加一个远程仓库 远程仓库是host在其他地方的仓库，为了进行collaborate， 需要add，remove远程仓库，管理远程分支。
+  <title>Git_branch</title>
+  <link>https://vihowe.github.io/git_branch/</link>
+  <pubDate>Thu, 12 Nov 2020 15:28:07 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/git_branch/</guid>
+  <description><![CDATA[Git-1 远程仓库 如何新添加一个远程仓库 远程仓库是host在其他地方的仓库，为了进行collaborate， 需要add，remove远程仓库，管理远程分支。
  展示远程仓库  git remote
 添加远程仓库 git remote add &lt;shortname&gt; &lt;url&gt;   ]]></description>
 </item><item>
-    <title>First_post</title>
-    <link>https://vihowe.github.io/first_post/</link>
-    <pubDate>Wed, 11 Nov 2020 22:18:40 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/first_post/</guid>
-    <description><![CDATA[Hello world. 🚀]]></description>
+  <title>First_post</title>
+  <link>https://vihowe.github.io/first_post/</link>
+  <pubDate>Wed, 11 Nov 2020 22:18:40 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/first_post/</guid>
+  <description><![CDATA[Hello world. 🚀]]></description>
 </item></channel>
 </rss>

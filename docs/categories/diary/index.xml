@@ -1,27 +1,27 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>diary - Category - 🥭未好🧑‍💻</title>
-        <link>https://vihowe.github.io/categories/diary/</link>
-        <description>diary - Category - 🥭未好🧑‍💻</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/categories/diary/" rel="self" type="application/rss+xml" /><item>
-    <title>04 19 21 Diary</title>
-    <link>https://vihowe.github.io/04-19-21-diary/</link>
-    <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/04-19-21-diary/</guid>
-    <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
+  <channel>
+    <title>diary - Category - 🥭未好🧑‍💻</title>
+    <link>https://vihowe.github.io/categories/diary/</link>
+    <description>diary - Category - 🥭未好🧑‍💻</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
+      <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/categories/diary/" rel="self" type="application/rss+xml" /><item>
+  <title>04 19 21 Diary</title>
+  <link>https://vihowe.github.io/04-19-21-diary/</link>
+  <pubDate>Mon, 19 Apr 2021 22:00:53 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/04-19-21-diary/</guid>
+  <description><![CDATA[Today&rsquo;s achievement:  阅读了一篇经济学人文章 完成了神经网络课程的大作业proposal  1. The Economists  pragmatic: dealing with problems in a sensible, practical way instead of strictly follow a set of principles.   Ross took a more pragmatic approach to management this problem.
   ill-fated: 不幸的，倒霉的   an ill-fated expedition 一场注定不成功的冒险
    fascism: 法西斯主义
   espouse: to support an idea, belife etc, especially a political one.
    He espouses a variety of scientific, social and political causes.]]></description>
 </item><item>
-    <title>20/04/07 Diary</title>
-    <link>https://vihowe.github.io/20-04-07-diary/</link>
-    <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/20-04-07-diary/</guid>
-    <description><![CDATA[tricks汇总   linux下的tar命令
+  <title>20/04/07 Diary</title>
+  <link>https://vihowe.github.io/20-04-07-diary/</link>
+  <pubDate>Wed, 07 Apr 2021 23:04:41 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/20-04-07-diary/</guid>
+  <description><![CDATA[tricks汇总   linux下的tar命令
  -f 指定archive文件 -z 使用gzip处理archive文件，生成或解压缩.gz文件 -x 从archive中还原文件 -c 建立新的archive文件   tar -zxvf file.tar.gz 解压缩得到.tar的archive然后还原archive得到file tar -zcvf file.tar.gz file 打包并用gzip压缩    linux下的zip命令： 用于压缩文件
  -r 递归处理指定文件目录 -d 从.zip文件中删除指定文件 unzip 用于解压缩    latex多图并排
   1 2 3 4 5 6 7 8 9 10 11  \begin{figure}[H] \centering %图片全局居中 \subfigure[name1]{ \label{Fig.sub.1} \includegraphics[width=0.45\textwidth]{a.pdf}} \subfigure[name2]{ \label{Fig.sub.2} \includegraphics[width=0.45\textwidth]{b.pdf}} \caption{Main name} \label{Fig.main} \end{figure}    pandas  基本数据类型  Series: 一维带标签的数组， ndarray-like， dict-like DataFrame: 二维的数据结构，不同的列可能有不同的数据类型，相当于一个spreadsheet  1 2 3 4 5 6 7 8 9 10 11  In [37]: d = { &#34;one&#34;: pd.]]></description>

@@ -1,16 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>MPI - Tag - 🥭未好🧑‍💻</title>
-        <link>https://vihowe.github.io/tags/mpi/</link>
-        <description>MPI - Tag - 🥭未好🧑‍💻</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
-            <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/tags/mpi/" rel="self" type="application/rss+xml" /><item>
-    <title>MPI_first</title>
-    <link>https://vihowe.github.io/mpi_first/</link>
-    <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
-    <author>vihowe</author>
-    <guid>https://vihowe.github.io/mpi_first/</guid>
-    <description><![CDATA[MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
+  <channel>
+    <title>MPI - Tag - 🥭未好🧑‍💻</title>
+    <link>https://vihowe.github.io/tags/mpi/</link>
+    <description>MPI - Tag - 🥭未好🧑‍💻</description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>vihowe@outlook.com (vihowe)</managingEditor>
+      <webMaster>vihowe@outlook.com (vihowe)</webMaster><lastBuildDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</lastBuildDate><atom:link href="https://vihowe.github.io/tags/mpi/" rel="self" type="application/rss+xml" /><item>
+  <title>MPI_first</title>
+  <link>https://vihowe.github.io/mpi_first/</link>
+  <pubDate>Wed, 07 Apr 2021 00:15:05 &#43;0800</pubDate>
+  <author>vihowe</author>
+  <guid>https://vihowe.github.io/mpi_first/</guid>
+  <description><![CDATA[MPI 初探   MPI_Init(NULL, NULL); // 两个参数保留未来使用
   MPI_COMM_WORLD // a built-in communicator
   每个进程有一个特定的rank
 获取进程rank:
