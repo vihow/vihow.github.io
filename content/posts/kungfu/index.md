@@ -2,6 +2,8 @@
 title: "Kungfu"
 date: 2022-01-15T23:50:00+08:00
 draft: false
+tags: ["ddl"]
+categories: ["paper"]
 ---
 
 # KungFu: Making Training in Distributed Machine Learning Adaptive
