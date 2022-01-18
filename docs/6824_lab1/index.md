@@ -1,8 +1,5 @@
----
-title: "6824_lab1"
-date: 2022-01-18T11:04:41+08:00
-draft: false
----
+# 6824_lab1
+
 # MIT6.824 Lab1
 <https://pdos.csail.mit.edu/6.824/labs/lab-mr.html>
 ## MapReduce框架结构
@@ -53,6 +50,7 @@ application的Map和Reduce function，并负责中间文件和结果文件的读
     - 若map未done，且所有map task都正常运行，告诉该worker等待
     - 若map已done，类似的便利reduce任务
 - 若reduce已done，告诉worker ``Done``
+
 
 
 

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>6824_lab1 - 🥭未好🧑‍💻</title><meta name="Description" content="This is My New Hugo Site"><meta property="og:title" content="6824_lab1" />
+<meta property="og:description" content="MIT6.824 Lab1 https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
+MapReduce框架结构  master负责分配任务（map or reduce）给worker进程 map worker从input files读取一个shard并进行处理，然后存储中间结果，中间结果会根据partition function分割成R个region. reduce worker从各个map worker处读取其负责的中间结果文件，**需要进行一个sort，因为 往往一个reduce task会负责多个不同的key，进行sort来把相同的key-value进行group， 然后 进行reduce操作并写入结果文件。  针对failure问题的解决方案：rename  map和reduce worker均生成temp file。 map worker完成后，生成R个中间temp 文件，并把文件名传给coordinator，若coordinator没收到过 该map task的，则记录下来，否则忽略。 reduce worker则根据coordinator提供的文件名进行读取，结果也写入temp file，完成后进行rename， 因此多个相同的reduce worker也只会产生一个output file。（output file位于GFS上，不是local disk）  针对straggler问题： 当一个map-reduce快要完成时，coordinator同时开启一些backup进程来完成剩下的工作，不论是backup还是 primary先完成，整个job都完成了。
+ Lab1  用go语言实现一个简单的MapReduce系统(coordinator &#43; worker)，多个worker进程调用 application的Map和Reduce function，并负责中间文件和结果文件的读写。worker通过RPC 与coordinator交流，ask for task，coordinator负责分配task给worker，并处理work的failuer问题： 某个worker长时间还未完成时，把这个task给另一个worker。
+ 大体思路 框架已经实现了worker通过rpc与coordinator交流。
+ worker向coordinator发信息，请求新的任务 coordinator根据当前的meta data，发送任务给worker  map任务：包括input， task_no, reduce task数目（用作中间结果命名, mr-X-Y） reduce任务：包括task_no(任务编号), map task数目（用来读取所有中间结果对应partition）   worker根据收到的回复，执行相应任务：map or reduce worker执行完成后通知coordinator，coordinator更新meta data coordinator发现job 完成后，再收到worker的请求的话，回复Done，worker收到后退出。  处理straggler问题：  coordinator维护一些task的meta data：task的开始时间 coordinator发task流程：先发map，再发reduce，若都完成，发送Done  遍历所有map任务，若存在map任务未完成：  若该map任务未开始（start_stamp = 0）或者执行时间已经超过10s  把该map task发给该请求worker   否则，该任务正在执行（map未done），继续遍历   若map未done，且所有map task都正常运行，告诉该worker等待 若map已done，类似的便利reduce任务   若reduce已done，告诉worker Done  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vihowe.github.io/6824_lab1/" /><meta property="og:image" content="https://vihowe.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-01-18T11:04:41+08:00" />
+<meta property="article:modified_time" content="2022-01-18T11:04:41+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vihowe.github.io/logo.png"/>
+
+<meta name="twitter:title" content="6824_lab1"/>
+<meta name="twitter:description" content="MIT6.824 Lab1 https://pdos.csail.mit.edu/6.824/labs/lab-mr.html
+MapReduce框架结构  master负责分配任务（map or reduce）给worker进程 map worker从input files读取一个shard并进行处理，然后存储中间结果，中间结果会根据partition function分割成R个region. reduce worker从各个map worker处读取其负责的中间结果文件，**需要进行一个sort，因为 往往一个reduce task会负责多个不同的key，进行sort来把相同的key-value进行group， 然后 进行reduce操作并写入结果文件。  针对failure问题的解决方案：rename  map和reduce worker均生成temp file。 map worker完成后，生成R个中间temp 文件，并把文件名传给coordinator，若coordinator没收到过 该map task的，则记录下来，否则忽略。 reduce worker则根据coordinator提供的文件名进行读取，结果也写入temp file，完成后进行rename， 因此多个相同的reduce worker也只会产生一个output file。（output file位于GFS上，不是local disk）  针对straggler问题： 当一个map-reduce快要完成时，coordinator同时开启一些backup进程来完成剩下的工作，不论是backup还是 primary先完成，整个job都完成了。
+ Lab1  用go语言实现一个简单的MapReduce系统(coordinator &#43; worker)，多个worker进程调用 application的Map和Reduce function，并负责中间文件和结果文件的读写。worker通过RPC 与coordinator交流，ask for task，coordinator负责分配task给worker，并处理work的failuer问题： 某个worker长时间还未完成时，把这个task给另一个worker。
+ 大体思路 框架已经实现了worker通过rpc与coordinator交流。
+ worker向coordinator发信息，请求新的任务 coordinator根据当前的meta data，发送任务给worker  map任务：包括input， task_no, reduce task数目（用作中间结果命名, mr-X-Y） reduce任务：包括task_no(任务编号), map task数目（用来读取所有中间结果对应partition）   worker根据收到的回复，执行相应任务：map or reduce worker执行完成后通知coordinator，coordinator更新meta data coordinator发现job 完成后，再收到worker的请求的话，回复Done，worker收到后退出。  处理straggler问题：  coordinator维护一些task的meta data：task的开始时间 coordinator发task流程：先发map，再发reduce，若都完成，发送Done  遍历所有map任务，若存在map任务未完成：  若该map任务未开始（start_stamp = 0）或者执行时间已经超过10s  把该map task发给该请求worker   否则，该任务正在执行（map未done），继续遍历   若map未done，且所有map task都正常运行，告诉该worker等待 若map已done，类似的便利reduce任务   若reduce已done，告诉worker Done  "/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vihowe.github.io/6824_lab1/" /><link rel="prev" href="https://vihowe.github.io/kungfu/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "6824_lab1",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/vihowe.github.io\/6824_lab1\/"
+        },"genre": "posts","wordcount":  84 ,
+        "url": "https:\/\/vihowe.github.io\/6824_lab1\/","datePublished": "2022-01-18T11:04:41+08:00","dateModified": "2022-01-18T11:04:41+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "vihowe"
+            },"description": ""
+    }
+    </script></head>
+  <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="🥭未好🧑‍💻">🥭未好🧑‍💻</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/movies/"> Movies </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="🥭未好🧑‍💻">🥭未好🧑‍💻</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/movies/" title="">Movies</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+        <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">6824_lab1</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>vihowe</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-18">2022-01-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;84 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#mapreduce框架结构">MapReduce框架结构</a>
+      <ul>
+        <li><a href="#针对failure问题的解决方案rename">针对failure问题的解决方案：rename</a></li>
+        <li><a href="#针对straggler问题">针对straggler问题：</a></li>
+      </ul>
+    </li>
+    <li><a href="#lab1">Lab1</a>
+      <ul>
+        <li><a href="#大体思路">大体思路</a>
+          <ul>
+            <li><a href="#处理straggler问题">处理straggler问题：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="mit6824-lab1">MIT6.824 Lab1</h1>
+<p><a href="https://pdos.csail.mit.edu/6.824/labs/lab-mr.html" target="_blank" rel="noopener noreffer">https://pdos.csail.mit.edu/6.824/labs/lab-mr.html</a></p>
+<h2 id="mapreduce框架结构">MapReduce框架结构</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="mapreduce.png"
+        data-srcset="/6824_lab1/mapreduce.png, mapreduce.png 1.5x, /6824_lab1/mapreduce.png 2x"
+        data-sizes="auto"
+        alt="/6824_lab1/mapreduce.png"
+        title="mapreduce" /></p>
+<ul>
+<li>master负责分配任务（map or reduce）给worker进程</li>
+<li>map worker从input files读取一个shard并进行处理，然后存储中间结果，中间结果会根据partition
+function分割成R个region.</li>
+<li>reduce worker从各个map worker处读取其负责的中间结果文件，**需要进行一个sort，因为
+往往一个reduce task会负责多个不同的key，进行sort来把相同的key-value进行group， 然后
+进行reduce操作并写入结果文件。</li>
+</ul>
+<h3 id="针对failure问题的解决方案rename">针对failure问题的解决方案：rename</h3>
+<ul>
+<li>map和reduce worker均生成temp file。</li>
+<li>map worker完成后，生成R个中间temp 文件，并把文件名传给coordinator，若coordinator没收到过
+该map task的，则记录下来，否则忽略。</li>
+<li>reduce worker则根据coordinator提供的文件名进行读取，结果也写入temp file，完成后进行rename，
+因此多个相同的reduce worker也只会产生一个output file。（output file位于GFS上，不是local disk）</li>
+</ul>
+<h3 id="针对straggler问题">针对straggler问题：</h3>
+<p>当一个map-reduce快要完成时，coordinator同时开启一些backup进程来完成剩下的工作，不论是backup还是
+primary先完成，整个job都完成了。</p>
+<hr>
+<h2 id="lab1">Lab1</h2>
+<blockquote>
+<p>用go语言实现一个简单的MapReduce系统(coordinator + worker)，多个worker进程调用
+application的Map和Reduce function，并负责中间文件和结果文件的读写。worker通过RPC
+与coordinator交流，ask for task，coordinator负责分配task给worker，并处理work的failuer问题：
+某个worker长时间还未完成时，把这个task给另一个worker。</p>
+</blockquote>
+<h3 id="大体思路">大体思路</h3>
+<p>框架已经实现了worker通过rpc与coordinator交流。</p>
+<ul>
+<li>worker向coordinator发信息，请求新的任务</li>
+<li>coordinator根据当前的meta data，发送任务给worker
+<ul>
+<li>map任务：包括input， task_no, reduce task数目（用作中间结果命名, mr-X-Y）</li>
+<li>reduce任务：包括task_no(任务编号), map task数目（用来读取所有中间结果对应partition）</li>
+</ul>
+</li>
+<li>worker根据收到的回复，执行相应任务：map or reduce</li>
+<li>worker执行完成后通知coordinator，coordinator更新meta data</li>
+<li>coordinator发现job 完成后，再收到worker的请求的话，回复Done，worker收到后退出。</li>
+</ul>
+<h4 id="处理straggler问题">处理straggler问题：</h4>
+<ul>
+<li>coordinator维护一些task的meta data：task的开始时间</li>
+<li>coordinator发task流程：先发map，再发reduce，若都完成，发送<code>Done</code>
+<ul>
+<li>遍历所有map任务，若存在map任务未完成：
+<ul>
+<li>若该map任务未开始（start_stamp = 0）或者执行时间已经超过10s
+<ul>
+<li>把该map task发给该请求worker</li>
+</ul>
+</li>
+<li>否则，该任务正在执行（map未done），继续遍历</li>
+</ul>
+</li>
+<li>若map未done，且所有map task都正常运行，告诉该worker等待</li>
+<li>若map已done，类似的便利reduce任务</li>
+</ul>
+</li>
+<li>若reduce已done，告诉worker <code>Done</code></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-01-18</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/6824_lab1/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1" data-via="xxxx"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://vihowe.github.io/6824_lab1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://vihowe.github.io/6824_lab1/" data-title="6824_lab1"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/kungfu/" class="prev" rel="prev" title="Kungfu"><i class="fas fa-angle-left fa-fw"></i>Kungfu</a></div>
+</div>
+<div id="comments"></div></article></div>
+      </main><footer class="footer">
+    <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.89.2">Hugo</a> | Theme - <a href="https://github.com/Lruihao/FixIt" target="_blank" rel="noopener noreffer" title="FixIt 0.2.11">
+            <i class="fa-stack fa-xs">
+              <i class="fas fa-bug fa-stack-1x"></i>
+              <i class="fas fa-ban fa-stack-2x"></i>
+            </i>
+            FixIt
+            </a>
+        </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">vihowe</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+  </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+        <i class="fas fa-arrow-up fa-fw"></i>
+      </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+        <i class="fas fa-comment fa-fw"></i>
+      </a>
+    </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript"></script>
+</body>
+</html>
