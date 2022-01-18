@@ -309,18 +309,18 @@ publishdir = "docs"
         clientSecret = ""
       # Valine comment config
       [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
-        placeholder = ""
-        avatar = "mp"
-        meta= ""
+        enable = true
+        appId = "ktpWCN9xaRTDaMhX2cNcVpiL-gzGzoHsz"
+        appKey = "z5b1fziVmfxlJR9hu9g0SiI3"
+        placeholder = "feel free to leave your comment~"
+        avatar = "robohash"
+        meta= ['nick','mail','link']
         pageSize = 10
         lang = ""
         visitor = true
         recordIP = true
         highlight = true
-        enableQQ = false
+        enableQQ = true
         serverURLs = ""
         #  emoji data file name, default is "google.yml"
         # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
