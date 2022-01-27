@@ -2,17 +2,19 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://vihowe.github.io/6824_lab1/</loc><lastmod>2022-01-18T11:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/posts/</loc><lastmod>2022-01-18T11:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/</loc><lastmod>2022-01-18T11:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/categories/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/tags/ddl/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/kungfu/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/categories/paper/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/tags/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/firstpost/</loc><lastmod>2022-01-15T15:23:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/movies/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://vihowe.github.io/movies/my-first-post/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/bao/</loc><lastmod>2022-01-27T22:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/bao/happybirthday2022/</loc><lastmod>2022-01-27T22:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/</loc><lastmod>2022-01-27T22:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://vihowe.github.io/6824_lab1/</loc><lastmod>2022-01-18T11:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/posts/</loc><lastmod>2022-01-18T11:04:41&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/categories/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/tags/ddl/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/kungfu/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/categories/paper/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/tags/</loc><lastmod>2022-01-15T23:50:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/firstpost/</loc><lastmod>2022-01-15T15:23:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/movies/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://vihowe.github.io/movies/my-first-post/</loc><lastmod>2022-01-14T12:02:20&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://vihowe.github.io/04-19-21-diary/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://vihowe.github.io/categories/diary/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://vihowe.github.io/tags/english/</loc><lastmod>2021-04-19T22:00:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
